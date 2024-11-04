@@ -1,4 +1,4 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     Layout = null;
 }
@@ -75,14 +75,16 @@
                                     </div>
                                     <a href="#" class="auth-link text-black">Forgot password?</a>
                                 </div>
-                                <div class="mb-2">
-                                    <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                                        <i class="mdi mdi-facebook me-2"></i>Connect using facebook
-                                    </button>
-                                </div>
                                 <div class="text-center mt-4 font-weight-light">
-                                    Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                                    Don't have an account? 
+                                    <a class="text-primary"
+                                        asp-controller="Access" 
+                                        asp-action="Register">Create
+                                    </a>
                                 </div>
+                                <span>role admin: username: b, pass: 1</span>
+                                <br />
+                                <span>role user: username: a, pass: 1</span>
                             }
                             @* </form> *@
                         </div>

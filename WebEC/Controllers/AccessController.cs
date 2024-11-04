@@ -59,6 +59,12 @@ namespace WebEC.Controllers
             HttpContext.Session.Remove("UserName");
             return RedirectToAction("LogIn", "Access");
         }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
         public IActionResult Register(TUser user)
         {
             TUser? _user =
@@ -70,6 +76,7 @@ namespace WebEC.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    user.LoaiUser = 0;
                     Db.TUsers.Add(user);
                     Db.SaveChanges();
                     return RedirectToAction("LogIn");
